@@ -4,6 +4,8 @@ var validator= require('validator');
 var excel= require('excel');
 var fs= require('fs');
 var id = require("uuid/v4");
+var isEmpty = require('lodash/isEmpty');
+var saltRounds = 10;
 
 var app = express();
 app.listen(3000);
@@ -33,31 +35,3 @@ function writeCatalogue(product, res){
 		})
 	})	
 }
-function check(string){
-	return string.replace("-"," ").split(" ").join(" ");
-}
-function verificationProduct(product){
-	var error={};
-	if(validator.isEmpty(check(product.name))){
-		error.name= "Champ Obligatoire";
-	}
-	if(validator.isEmpty(check(product.description))){
-		error.description= "Champ Obligatoire";
-	}
-	if(validator.isEmpty(product.price)){
-		error.price= "Champ Obligatoire";
-	}
-	if(!validator.isAlpha(check(product.name))){
-		error.name= "Caractère non valide";
-	}
-	if(!validator.isLength(check(product.description, {max: 150}))){
-		error.description= "Le nombre de Caractère est limité a 150"
-	}
-
-	return error;		
-}
-
-app.post('/admin/product', function(req, res){
-	product= req.body
-	verificationProduct(product)
-})
