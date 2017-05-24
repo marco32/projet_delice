@@ -1,15 +1,26 @@
 {
   "name": "bianchi",
   "version": "1.0.0",
-  "description": "",
+  "description": "# First commit.",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.98.2",
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marco32/projet_delice.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marco32/projet_delice/issues"
+  },
+  "homepage": "https://github.com/marco32/projet_delice#readme"
 }
