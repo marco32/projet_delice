@@ -121,41 +121,32 @@ if ('serviceWorker' in navigator) {
 
 
 
-console.log('yop')
+
 $('.dropdown-button').dropdown('open');
 $('.carousel').carousel();
-var photo= ['./images/1.jpg','./images/2.jpg','./images/3.jpg','./images/4.jpg','./images/1.jpg','./images/2.jpg','./images/3.jpg','./images/4.jpg','./images/1.jpg','./images/2.jpg','./images/3.jpg','./images/4.jpg']
+var photo= ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg']
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 $('#surgeles').click(function(){
 	$('#sous_cat').html("");
-	console.log('yop')
 	for (var i = 0; i < listesurgeles.length; i++) {
 		$("#sous_cat").append('<li id="'+listesurgeles[i]+'">'+listesurgeles[i]+'</li>');
 	}
 })
-stroll.bind('#test1');
+stroll.bind('#view');
 $('#frais').click(function(){
 	$('#sous_cat').html("");
 	for (var i = 0; i < listefrais.length; i++) {
 		$("#sous_cat").append('<li><a href="">'+listefrais[i]+'</a></li>');
 	}
 })
-
 $("#sous_cat").delegate('li','click', function(){
-	$("#test1").html("");
-	$("#carou").html("");
-	console.log('yop')
-	for (var i = 0; i < photo.length; i++) {
-	$("#test1").append('<li><img src="'+photo[i]+'"/></li>')		
-	}
+  $("#view").html("");
+  console.log('yop')
+  var ligne= '<ul id="products" class="grow">'
+  $("#view").append(ligne)
+  for (var i = 0; i < photo.length; i++) {
+  $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+photo[i]+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">Nom du produit</h3><h6 class="right">Ref</h6></div><div class="card-reveal"><h3 card-title grey-text text-darken-4>Nom du produit</h3><h6 class="right">Prix</h6><p>Description</p></div></div></li>')
+  }
 })
-$("#logo").click(function(){
-	index();
-})
-function index(){
-	$("#test1").html("");
-	for (var i = 0; i < photo.length; i++) {
-	$("#carou").append('<div class="carousel-item"><img src="'+photo[i]+'"/></div>')		
-	}	
-}
+
