@@ -150,3 +150,11 @@ $("#sous_cat").delegate('li','click', function(){
   }
 })
 
+$.ajax ({
+  url:"https://sheets.googleapis.com/v4/spreadsheets/1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s",
+  method:'GET',
+  data: {},
+  success: function(data){
+    console.log(data);
+  }
+});
