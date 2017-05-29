@@ -142,7 +142,7 @@ $('#frais').click(function(){
 })
 $("#sous_cat").delegate('li','click', function(){
   $("#view").html("");
-  console.log('yop')
+  $("#sous_cat").html("");
   var ligne= '<ul id="products" class="grow">'
   $("#view").append(ligne)
   for (var i = 0; i < photo.length; i++) {
