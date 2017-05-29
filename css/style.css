@@ -51,3 +51,14 @@ ul.grow {
 	width: 300px;
 	height: 300px;
 }
+
+ul#sous_cat{
+		word-spacing: 20px;
+    }
+
+
+    li{
+    	margin-right: 20px;
+    	font-family: 'Dosis';
+    	font-size: 20px;
+    }
