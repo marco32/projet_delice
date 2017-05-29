@@ -20,12 +20,14 @@ self.addEventListener('install', function(e){
 //pour lequelle il faut mettre en cache la reponse
 var filesToCache = [
  '/projet_delice/',
+ '/projet_delice/css/stroll.min.css',
  '/projet_delice/index.html',
  '/projet_delice/css/style.css',
  '/projet_delice/css/materialize.min.css',
  '/projet_delice/js/app.js',
  '/projet_delice/js/materialize.min.js',
  '/projet_delice/js/jquery.min.js',
+ '/projet_delice/js/stroll.min.js',
  '/projet_delice/fonts/roboto/Roboto-Bold.woff',
  '/projet_delice/fonts/roboto/Roboto-Bold.woff2',
  '/projet_delice/fonts/roboto/Roboto-Light.woff',

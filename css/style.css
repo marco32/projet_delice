@@ -1,3 +1,6 @@
+#authorize-button,#signout-button {
+    display: none;
+}
 .carousel1{
 	width: 30%;
 }
