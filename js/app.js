@@ -130,7 +130,7 @@ var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 $('#surgeles').click(function(){
 	$('#sous_cat').html("");
 	for (var i = 0; i < listesurgeles.length; i++) {
-		$("#sous_cat").append('<li id="'+listesurgeles[i]+'">'+listesurgeles[i]+'</li>');
+		$("#sous_cat").append('<li><a id="'+listesurgeles[i]+'">'+listesurgeles[i]+'</a></li>');
 	}
 })
 stroll.bind('#view');
