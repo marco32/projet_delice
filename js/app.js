@@ -146,7 +146,7 @@ $("#sous_cat").delegate('li','click', function(){
   var ligne= '<ul id="products" class="grow">'
   $("#view").append(ligne)
   for (var i = 0; i < photo.length; i++) {
-  $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+photo[i]+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">Nom du produit</h3><h6 class="right">Ref</h6></div><div class="card-reveal"><h3 card-title grey-text text-darken-4>Nom du produit</h3><h6 class="right">Prix</h6><p>Description</p></div></div></li>')
+  $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+photo[i]+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">Nom du produit</h3><h6 class="right">Ref</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">Nom du produit</h3><h6 class="right">Prix</h6><p>Description</p></div></div></li>')
   }
 })
 
