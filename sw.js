@@ -45,14 +45,14 @@ var filesToCache = [
  '/projet_delice/images/logo.jpg',
  '/projet_delice/favicon.ico',
  '/projet_delice/manifest.json',
- 'http://cors.io/?u=https://apis.google.com/js/api.js',
- 'http://cors.io/?u=https://apis.google.com/js/googleapis.proxy.js?onload=startup',
- 'http://cors.io/?u=https://apis.google.com/js/rpc:shindig_random.js?onload=init',
- 'http://cors.io/?u=https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.fr.XCdm_G9BiDk.O/m=googleapis_proxy/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOTic-s0lSx38xIfO6GP-IasmSR3w/cb=gapi.loaded_0',
- 'http://cors.io/?u=https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.fr.XCdm_G9BiDk.O/m=rpc,shindig_random/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOTic-s0lSx38xIfO6GP-IasmSR3w/cb=gapi.loaded_0',
- 'http://cors.io/?u=https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.fr.XCdm_G9BiDk.O/m=auth2,client/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOTic-s0lSx38xIfO6GP-IasmSR3w/cb=gapi.loaded_0',
- 'http://cors.io/?u=https://ssl.gstatic.com/accounts/o/2828155119-idpiframe.js',
- 'http://cors.io/?u=https://ssl.gstatic.com/accounts/o/1223855322-postmessagerelay.js',
+ 'https://cors.io/?u=https://apis.google.com/js/api.js',
+ 'https://cors.io/?u=https://apis.google.com/js/googleapis.proxy.js?onload=startup',
+ 'https://cors.io/?u=https://apis.google.com/js/rpc:shindig_random.js?onload=init',
+ 'https://cors.io/?u=https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.fr.XCdm_G9BiDk.O/m=googleapis_proxy/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOTic-s0lSx38xIfO6GP-IasmSR3w/cb=gapi.loaded_0',
+ 'https://cors.io/?u=https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.fr.XCdm_G9BiDk.O/m=rpc,shindig_random/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOTic-s0lSx38xIfO6GP-IasmSR3w/cb=gapi.loaded_0',
+ 'https://cors.io/?u=https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.fr.XCdm_G9BiDk.O/m=auth2,client/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOTic-s0lSx38xIfO6GP-IasmSR3w/cb=gapi.loaded_0',
+ 'https://cors.io/?u=https://ssl.gstatic.com/accounts/o/2828155119-idpiframe.js',
+ 'https://cors.io/?u=https://ssl.gstatic.com/accounts/o/1223855322-postmessagerelay.js',
 ];
 
 
