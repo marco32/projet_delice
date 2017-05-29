@@ -7,6 +7,9 @@
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "materialize-css": "^0.98.2",
+     "body-parser": "^1.17.2",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^19.0.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,0 +1,15 @@
+
+{
+  "name": "Bianchi_Delice catalogue",
+  "short_name": "Bianchi_Delice",
+  "display": "standalone",
+  "orientation": "landscape",
+  "start_url": "/",
+  "background_color": "#D19275",
+  "theme_color": "#D19275",
+  "icons": [{
+    "src": "favicon.ico",
+    "type": "image/png",
+    "sizes": "48x48"
+  }]
+}
