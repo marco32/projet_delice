@@ -1,7 +1,7 @@
 if ('serviceWorker' in navigator) {
   // J'enregistre mon service worker sw.js
   // avec comme scope '/' (racine);
-  navigator.serviceWorker.register('sw.js', { scope: '/bianchiTestPage/'})
+  navigator.serviceWorker.register('sw.js', { scope: '/projet_delice/'})
   // Si c'est good..
   .then(function(reg){
     console.log('Registration succeeded. Scope is ' + reg.scope);

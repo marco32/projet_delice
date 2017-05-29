@@ -4,7 +4,7 @@
   "short_name": "Bianchi_Delice",
   "display": "standalone",
   "orientation": "landscape",
-  "start_url": "/",
+  "start_url": "https://marco32.github.io/projet_delice/",
   "background_color": "#D19275",
   "theme_color": "#D19275",
   "icons": [{

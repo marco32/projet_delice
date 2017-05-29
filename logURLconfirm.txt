@@ -1,7 +1,0 @@
-[33m[nodemon] 1.11.0[39m
-[33m[nodemon] to restart at any time, enter `rs`[39m
-[33m[nodemon] watching: *.*[39m
-[32m[nodemon] starting `node server.js`[39m
-bianchiDelice app running on port 3000
-Authorize this app by visiting this url:  https://accounts.google.com/o/oauth2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fspreadsheets.readonly&response_type=code&client_id=397522859395-84g22kehn30179u64c02ev5ln4haqbid.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2FconfirmGoogleAPI
-Enter the code from that page here: Terminate batch job (Y/N)?

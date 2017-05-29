@@ -1,4 +1,4 @@
-var cacheName = 'Bianchi_Delice'; //le nom de mon cache !
+var cacheName = 'Bianchi_DeliceV2'; //le nom de mon cache !
 
 // J'assigne un écouteur 'install' à mon service worker
 self.addEventListener('install', function(e){
@@ -19,30 +19,30 @@ self.addEventListener('install', function(e){
 //impossible de mettre un dossier entier, ce n'est pas une liste de fichier mais une liste de requete get
 //pour lequelle il faut mettre en cache la reponse
 var filesToCache = [
- '/bianchiTestPage/',
- '/bianchiTestPage/index.html',
- '/bianchiTestPage/css/style.css',
- '/bianchiTestPage/css/materialize.min.css',
- '/bianchiTestPage/js/app.js',
- '/bianchiTestPage/js/materialize.min.js',
- '/bianchiTestPage/js/jquery.min.js',
- '/bianchiTestPage/fonts/roboto/Roboto-Bold.woff',
- '/bianchiTestPage/fonts/roboto/Roboto-Bold.woff2',
- '/bianchiTestPage/fonts/roboto/Roboto-Light.woff',
- '/bianchiTestPage/fonts/roboto/Roboto-Light.woff2',
- '/bianchiTestPage/fonts/roboto/Roboto-Medium.woff',
- '/bianchiTestPage/fonts/roboto/Roboto-Medium.woff2',
- '/bianchiTestPage/fonts/roboto/Roboto-Regular.woff',
- '/bianchiTestPage/fonts/roboto/Roboto-Regular.woff2',
- '/bianchiTestPage/fonts/roboto/Roboto-Thin.woff',
- '/bianchiTestPage/fonts/roboto/Roboto-Thin.woff2',
- '/bianchiTestPage/images/salsifis.jpg',
- '/bianchiTestPage/images/poulet.jpg',
- '/bianchiTestPage/images/dinde.jpg',
- '/bianchiTestPage/images/coquilles-fruits-de-mer.jpg',
- '/bianchiTestPage/images/logo.jpg',
- '/bianchiTestPage/favicon.ico',
- '/bianchiTestPage/manifest.json',
+ '/projet_delice/',
+ '/projet_delice/index.html',
+ '/projet_delice/css/style.css',
+ '/projet_delice/css/materialize.min.css',
+ '/projet_delice/js/app.js',
+ '/projet_delice/js/materialize.min.js',
+ '/projet_delice/js/jquery.min.js',
+ '/projet_delice/fonts/roboto/Roboto-Bold.woff',
+ '/projet_delice/fonts/roboto/Roboto-Bold.woff2',
+ '/projet_delice/fonts/roboto/Roboto-Light.woff',
+ '/projet_delice/fonts/roboto/Roboto-Light.woff2',
+ '/projet_delice/fonts/roboto/Roboto-Medium.woff',
+ '/projet_delice/fonts/roboto/Roboto-Medium.woff2',
+ '/projet_delice/fonts/roboto/Roboto-Regular.woff',
+ '/projet_delice/fonts/roboto/Roboto-Regular.woff2',
+ '/projet_delice/fonts/roboto/Roboto-Thin.woff',
+ '/projet_delice/fonts/roboto/Roboto-Thin.woff2',
+ '/projet_delice/images/1.jpg',
+ '/projet_delice/images/2.jpg',
+ '/projet_delice/images/3.jpg',
+ '/projet_delice/images/4.jpg',
+ '/projet_delice/images/logo.jpg',
+ '/projet_delice/favicon.ico',
+ '/projet_delice/manifest.json',
 ];
 
 
