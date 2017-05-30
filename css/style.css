@@ -53,12 +53,12 @@ ul.grow {
 }
 
 ul#sous_cat{
-		word-spacing: 20px;
+		word-spacing: 10px;
     }
 
 
     li{
-    	margin-right: 20px;
+    	margin-right: 15px;
     	font-family: 'Dosis';
     	font-size: 20px;
     }
