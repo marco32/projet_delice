@@ -265,7 +265,7 @@ if ('serviceWorker' in navigator) {
                 "maree":maree,
                 "boucher": boucher,
                 "volailles":volailles,
-                "legumes":legumes
+                "legumes":legumes,
                 "patissier": patissier,
                 "glacier": glacier,
                 "bio": bio,
