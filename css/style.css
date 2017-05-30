@@ -1,8 +1,5 @@
 #authorize-button,#signout-button {
-    display: none;
-}
-.carousel1{
-	width: 30%;
+	display: none;
 }
 
 #logo{
@@ -25,48 +22,56 @@ ul.grow {
 	list-style: none;
 
 	-webkit-perspective: 400px;
-	   -moz-perspective: 400px;
-	    -ms-perspective: 400px;
-	     -o-perspective: 400px;
-	        perspective: 400px;
+	-moz-perspective: 400px;
+	-ms-perspective: 400px;
+	-o-perspective: 400px;
+	perspective: 400px;
 }
-	ul.grow li {
-		position: relative;
-		padding: 16px;
-		background: #eee;
-		color: #252525;
-		font-size: 18px;
-		z-index: 2;
+ul.grow li {
+	position: relative;
+	padding: 16px;
+	background: #eee;
+	color: #252525;
+	font-size: 18px;
+	z-index: 2;
 
-		-webkit-transform: translateZ(0px);
-		   -moz-transform: translateZ(0px);
-		    -ms-transform: translateZ(0px);
-		     -o-transform: translateZ(0px);
-		        transform: translateZ(0px);
-	}
-	ul.grow li:nth-child(odd) {
-		background: #fff;
-	}
-.img{
-	width: 300px;
-	height: 300px;
+	-webkit-transform: translateZ(0px);
+	-moz-transform: translateZ(0px);
+	-ms-transform: translateZ(0px);
+	-o-transform: translateZ(0px);
+	transform: translateZ(0px);
 }
+ul.grow li:nth-child(odd) {
+	background: #fff;
+}
+
 
 ul#sous_cat{
-		word-spacing: 10px;
-		background-color: #CD853F;
-		width: 100%;
-    }
+	word-spacing: 10px;
+	background-color: #CD853F;
+	width: 100%;
+}
 
 
-    li{
-    	margin-right: 15px;
-    	font-family: 'Dosis';
-    	font-size: 20px;
-    }
+li{
+	margin-right: 15px;
+	font-family: 'Dosis';
+	font-size: 20px;
+}
 
 
-    #surgeles{
-    	padding-left: 15px;
-    }
+#surgeles{
+	padding-left: 15px;
+}
+div.carousel{
+	width: 100%;
+	overflow: visible;
+}
+.carousel .carousel-item{
+	width: 30%;
+}
 
+nous travaillons sur un catalogue interactif pour tablette.
+c'est une passion et grace à simplon, 
+me permet de l'approfondir et d'en apprendre plus.
+j'étais employer commercial en supermarcher.

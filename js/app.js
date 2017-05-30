@@ -11,20 +11,6 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with' + error);
   });
 }
-var traiteur=[];
-var plats=[];
-var maree=[];
-var boucher=[];
-var volailles=[];
-var legumes=[];
-var patissier=[];
-var glacier=[];
-var fruits=[];
-var sbio=[];
-var bio=[];
-var epicerie=[];
-var vin=[];
-
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '397522859395-84g22kehn30179u64c02ev5ln4haqbid.apps.googleusercontent.com';
 
@@ -110,146 +96,205 @@ var vin=[];
        * Print the names and majors of students in a sample spreadsheet:
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
+       var allProducts={};
+       var traiteur=[];
+       var plats=[];
+       var maree=[];
+       var boucher=[];
+       var volailles=[];
+       var legumes=[];
+       var patissier=[];
+       var glacier=[];
+       var fruits=[];
+       var bio=[];
+       var frais=[];
        function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
           range: 'test2',
         }).then(function(response) {
+          var product={};
           var range = response.result;
           if (range.values.length > 0) {
-            for (i = 1; i < 41; i++) {
+            for (i = 1; i < range.values.length; i++) {
               var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              traiteur.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
+              if(row[3] === "traiteur"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              traiteur.push(product)
+              }else if(row[3] === "plats cuisines"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              plats.push(product)              
+              }else if(row[3] === "La marée"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              maree.push(product)              
+              }else if(row[3] === "légumes"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              legumes.push(product)              
+              }else if(row[3] === "boucher"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              boucher.push(product)
+              }else if(row[3] === "volailles"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              volailles.push(product)
+              }else if(row[3] === "patissier"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              patissier.push(product)            
+              }else if(row[3] === "glacier"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              glacier.push(product)              
+              }else if(row[3] === "Produits frais"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              frais.push(product)              
+              }else if(row[3] === null && row[2] === "1"){
+                product={
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]
+                }
+              bio.push(product)                      
+              }
+              allProducts={
+                "traiteur":traiteur,
+                "plats":plats,
+                "maree":maree,
+                "boucher": boucher,
+                "volailles":volailles,
+                "legumes":legumes
+                "patissier": patissier,
+                "glacier": glacier,
+                "bio": bio,
+                "frais": frais
+              }
+            }else {
+              appendPre('No data found.');
             }
-            for (i = 41; i < 82; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              plats.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }for (i = 82; i < 123; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              maree.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 123; i < 164; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              boucher.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 164; i < 205; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              volailles.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 205; i < 246; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              legumes.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 246; i < 287; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              patissier.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 287; i < 328; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              glacier.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 328; i < 369; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              fruits.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 369; i < 410; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              sbio.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 410; i < 451; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              bio.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 451; i < 492; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              epicerie.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-            for (i = 492; i < 522; i++) {
-              var row = range.values[i];
-              var produits1 = {"ref":row[0],"nom":row[1],"description":row[2],"prix":row[3],"photo":row[0]};
-              vin.push(produits1)
-                // Print columns A and E, which correspond to indices 0 and 4.
-              // appendPre(row[0] + ', ' + row[1] + ', ' + row[2] + ', ' + row[3] );
-            }
-
-          } else {
-            appendPre('No data found.');
+          }, function(response) {
+            appendPre('Error: ' + response.result.error.message);
           }
-        }, function(response) {
-          appendPre('Error: ' + response.result.error.message);
-        });
-}
-
-
-$('.dropdown-button').dropdown('open');
+          });
+};
 $('.carousel').carousel();
 var photo= ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg']
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 
+news();
 function news(){
-  stroll.bind('#view');
-  $("#sous_cat").html("");
   $("#view").html("");
-  var ligne = '<ul id="products" class="grow">'
-  $("#view").append(ligne)
-  for (var i = 0; i < photo.length; i++) {
-    $("#products").append('<li class="carousel-item" ><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+photo[i]+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">Nom du produit</h3><h6 class="right">Ref</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">Nom du produit</h3><h6 class="right">Prix</h6><p>Description</p></div></div></li>')
+  for (var i = 0; i < allProducts.length; i++) {
+    console.log(i)
+    $('#'+i+'').append('<div id="'+allProducts[i]+'">'+allProducts[i]+'</div>')
   }
 }
-news();
-$('#surgeles').click(function(){
-  $('#sous_cat').html("");
-  for (var i = 0; i < listesurgeles.length; i++) {
-    $("#sous_cat").append('<li id="'+listesurgeles[i]+'"><a href="#">'+listesurgeles[i]+'</a></li>');
-  }
-})
-$('#frais').click(function(){
-	$('#sous_cat').html("");
-	for (var i = 0; i < listefrais.length; i++) {
-		$("#sous_cat").append('<li id="'+listefrais[i]+'"><a href="#">'+listefrais[i]+'</a></li>');
-	}
-})
-$("#sous_cat").delegate('li','click', function(){
-    var categorie = $(this).attr("id");
-    console.log(categorie)
-    generer(categorie);
+$("#view").delegate('p','click', function(){
+  var categorie = $(this).attr("id");
+  generer(categorie);
 })
 
 
@@ -259,8 +304,10 @@ function generer(array){
   $("#sous_cat").html("");
   var ligne= '<ul id="products" class="grow">'
   $("#view").append(ligne)
-  for (var i = 0; i < array.length; i++) {
-    $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/projet_delice/images/'+array[i].nom+'.jpg"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+array[i].nom+'"</h3><h6 class="right">"'+array[i].ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+array[i].nom+'"</h3><h6 class="right">"'+array[i].prix+'"</h6><p>"'+array[i].description+'"</p></div></div></li>')
+  for (var i = 0; i < allProducts[array].length; i++) {  
+    var insert= allProducts[array][i];
+    $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.pttc+'"</h6><p>"'+insert.desc+'"</p></div></div></li>')
   }
 }
-
+// à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
+ 
