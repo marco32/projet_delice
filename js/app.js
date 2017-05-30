@@ -271,7 +271,8 @@ if ('serviceWorker' in navigator) {
                 "bio": bio,
                 "frais": frais
               }
-            }else {
+            }
+          }else {
               appendPre('No data found.');
             }
           }, function(response) {
