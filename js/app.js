@@ -277,7 +277,6 @@ if ('serviceWorker' in navigator) {
             }
           }, function(response) {
             appendPre('Error: ' + response.result.error.message);
-          }
           });
 };
 $('.carousel').carousel();
