@@ -11,7 +11,7 @@
 }
 
 nav.nav-extended{
-	background-color : #D19275;
+	background-color : #808080;
 }
 ul.grow {
 	position: relative;
@@ -54,6 +54,8 @@ ul.grow {
 
 ul#sous_cat{
 		word-spacing: 10px;
+		background-color: #CD853F;
+		width: 100%;
     }
 
 
