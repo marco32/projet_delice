@@ -286,6 +286,7 @@ var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 
 news();
 function news(){
+  console.log(allProducts)
   $("#view").html("");
   for (var i = 0; i < allProducts.length; i++) {
     console.log(i)
