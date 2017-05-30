@@ -11,7 +11,7 @@
 }
 
 nav.nav-extended{
-	background-color : #D19275;
+	background-color : #808080;
 }
 ul.grow {
 	position: relative;
@@ -46,3 +46,26 @@ ul.grow {
 	ul.grow li:nth-child(odd) {
 		background: #fff;
 	}
+.img{
+	width: 300px;
+	height: 300px;
+}
+
+ul#sous_cat{
+		word-spacing: 10px;
+		background-color: #CD853F;
+		width: 100%;
+    }
+
+
+    li{
+    	margin-right: 15px;
+    	font-family: 'Dosis';
+    	font-size: 20px;
+    }
+
+
+    #surgeles{
+    	padding-left: 15px;
+    }
+
