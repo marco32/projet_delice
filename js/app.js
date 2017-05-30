@@ -237,18 +237,20 @@ news();
 $('#surgeles').click(function(){
   $('#sous_cat').html("");
   for (var i = 0; i < listesurgeles.length; i++) {
-    $("#sous_cat").append('<li id="'+listesurgeles[i]+'">'+listesurgeles[i]+'</li>');
+    $("#sous_cat").append('<li id="'+listesurgeles[i]+'"><a href="">'+listesurgeles[i]+'</a></li>');
   }
 })
 $('#frais').click(function(){
 	$('#sous_cat').html("");
 	for (var i = 0; i < listefrais.length; i++) {
-		$("#sous_cat").append('<li><a href="">'+listefrais[i]+'</a></li>');
+		$("#sous_cat").append('<li id="'+listefrais[i]+'"><a href="">'+listefrais[i]+'</a></li>');
 	}
 })
 $("#sous_cat").delegate('li','click', function(){
-  console.log(traiteur)
+    var categorie = $(this).attr("id");
+    generer(categorie);
 })
+
 
 function generer(array){
 
@@ -257,7 +259,7 @@ function generer(array){
   var ligne= '<ul id="products" class="grow">'
   $("#view").append(ligne)
   for (var i = 0; i < array.length; i++) {
-    $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+photo[i]+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">Nom du produit</h3><h6 class="right">Ref</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">Nom du produit</h3><h6 class="right">Prix</h6><p>Description</p></div></div></li>')
+    $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/projet_delice/images/'+array[i].nom+'.jpg"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+array[i].nom+'"</h3><h6 class="right">"'+array[i].ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+array[i].nom+'"</h3><h6 class="right">"'+array[i].prix+'"</h6><p>"'+array[i].description+'"</p></div></div></li>')
   }
 }
 
