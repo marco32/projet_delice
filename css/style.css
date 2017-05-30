@@ -15,10 +15,11 @@ nav.nav-extended{
 }
 ul.grow {
 	position: relative;
-	width: 230px;
+	width: 40%;
 	height: 480px;
 	margin: 0;
 	padding: 0;
+	margin-left: 30%;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	list-style: none;

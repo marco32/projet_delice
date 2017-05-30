@@ -237,17 +237,18 @@ news();
 $('#surgeles').click(function(){
   $('#sous_cat').html("");
   for (var i = 0; i < listesurgeles.length; i++) {
-    $("#sous_cat").append('<li id="'+listesurgeles[i]+'"><a href="">'+listesurgeles[i]+'</a></li>');
+    $("#sous_cat").append('<li id="'+listesurgeles[i]+'"><a href="#">'+listesurgeles[i]+'</a></li>');
   }
 })
 $('#frais').click(function(){
 	$('#sous_cat').html("");
 	for (var i = 0; i < listefrais.length; i++) {
-		$("#sous_cat").append('<li id="'+listefrais[i]+'"><a href="">'+listefrais[i]+'</a></li>');
+		$("#sous_cat").append('<li id="'+listefrais[i]+'"><a href="#">'+listefrais[i]+'</a></li>');
 	}
 })
 $("#sous_cat").delegate('li','click', function(){
     var categorie = $(this).attr("id");
+    console.log(categorie)
     generer(categorie);
 })
 
