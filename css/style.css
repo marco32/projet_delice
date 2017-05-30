@@ -15,11 +15,10 @@ nav.nav-extended{
 }
 ul.grow {
 	position: relative;
-	width: 40%;
+	width: 230px;
 	height: 480px;
 	margin: 0;
 	padding: 0;
-	margin-left: 30%;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	list-style: none;
@@ -47,7 +46,3 @@ ul.grow {
 	ul.grow li:nth-child(odd) {
 		background: #fff;
 	}
-.img{
-	width: 300px;
-	height: 300px;
-}
