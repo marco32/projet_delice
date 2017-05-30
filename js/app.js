@@ -11,19 +11,19 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with' + error);
   });
 }
-      var traiteur;
-      var plats;
-      var maree;
-      var boucher;
-      var volailles;
-      var legumes;
-      var patissier;
-      var glacier;
-      var fruits;
-      var sbio;
-      var bio;
-      var epicerie;
-      var vin;
+      var traiteur=[];
+      var plats=[];
+      var maree=[];
+      var boucher=[];
+      var volailles=[];
+      var legumes=[];
+      var patissier=[];
+      var glacier=[];
+      var fruits=[];
+      var sbio=[];
+      var bio=[];
+      var epicerie=[];
+      var vin=[];
 
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '397522859395-84g22kehn30179u64c02ev5ln4haqbid.apps.googleusercontent.com';
@@ -235,17 +235,10 @@ stroll.bind('#view');
       }
 news();
 $('#surgeles').click(function(){
-<<<<<<< HEAD
   $('#sous_cat').html("");
   for (var i = 0; i < listesurgeles.length; i++) {
     $("#sous_cat").append('<li id="'+listesurgeles[i]+'">'+listesurgeles[i]+'</li>');
   }
-=======
-	$('#sous_cat').html("");
-	for (var i = 0; i < listesurgeles.length; i++) {
-		$("#sous_cat").append('<li><a id="'+listesurgeles[i]+'">'+listesurgeles[i]+'</a></li>');
-	}
->>>>>>> 01ad4dd89d338465a0d9f5a4febcbb08c7279c1f
 })
 $('#frais').click(function(){
 	$('#sous_cat').html("");
@@ -263,8 +256,3 @@ $("#sous_cat").delegate('li','click', function(){
   $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+photo[i]+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">Nom du produit</h3><h6 class="right">Ref</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">Nom du produit</h3><h6 class="right">Prix</h6><p>Description</p></div></div></li>')
   }
 })
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 01ad4dd89d338465a0d9f5a4febcbb08c7279c1f
