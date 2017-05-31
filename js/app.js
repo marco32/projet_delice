@@ -167,7 +167,7 @@ function news(){
   }
 }
 
-$(document).ready(function(){
+
   $("#products").delegate('img','click', function(){
     console.log("yop");
     var categorie = $(this).attr("id");
@@ -183,4 +183,3 @@ $(document).ready(function(){
   // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
    
   $('.carousel').carousel();
-});
