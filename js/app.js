@@ -97,17 +97,7 @@ if ('serviceWorker' in navigator) {
        * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
        */
        var allProducts={};
-       // var traiteur=[];
-       // var plats=[];
-       // var maree=[];
-       // var boucher=[];
-       // var volailles=[];
-       // var legumes=[];
-       // var patissier=[];
-       // var glacier=[];
-       // var fruits=[];
-       // var bio=[];
-       // var frais=[];
+
        function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
