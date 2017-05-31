@@ -135,8 +135,8 @@ var photo= {"traiteur": "images/corolles-aperitif.jpg",
                   "ppromo": row[10],
                   "desc": row[11],
                   "photo": row[12]});
-            // news();
             }
+            news();
 
           }else {
               appendPre('No data found.');
@@ -175,7 +175,8 @@ function news(){
     generer(categorie);
   });
 
-  $("#logo").click(function(){
+  $("#logo").click(function(e){
+    e.preventDefault();
     //console.log("yopa");
     $("#view").html("");
     //console.log("yop");
