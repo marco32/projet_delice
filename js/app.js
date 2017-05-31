@@ -154,17 +154,14 @@ function news(){
   $("#view").html("");
   var categ = Object.keys(allProducts);
   for (var i = 0; i < categ.length; i++) {
-    $("#products").append('<a class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
+    $("#products").append('<a id="'+categ[i]+'" href="#" class="carousel-item"><img class="img" src="'+photo[categ[i]]+'"/></a>');
 
   }
 }
-$("#view").delegate('img','click', function(){
-  $(this).click(function(){
-    
+$("#view").delegate('a','click', function(){
   console.log(categorie)
   var categorie = $(this).attr("id");
   generer(categorie);
-  })
 })
 
 $("#logo").click(function(){
