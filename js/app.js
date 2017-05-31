@@ -111,7 +111,7 @@ if ('serviceWorker' in navigator) {
        function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
-          range: 'test2',
+          range: 'test',
         }).then(function(response) {
           var product={};
           var range = response.result;
