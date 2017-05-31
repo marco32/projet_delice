@@ -162,11 +162,9 @@ function generer(array){
 
   $("#view").html("");
   $("#products").html("");
-  var ligne= '<ul id="products" class="grow">'
-  $("#view").append(ligne)
   for (var i = 0; i < allProducts[array].length; i++) {  
     var insert= allProducts[array][i];
-    $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.pttc+'"</h6><p>"'+insert.desc+'"</p></div></div></li>')
+    $("#view").append('<div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.pttc+'"</h6><p>"'+insert.desc+'"</p></div></div>')
   }
 }
 // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
