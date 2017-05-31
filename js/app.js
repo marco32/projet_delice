@@ -167,6 +167,7 @@ $("#products").delegate('img','click', function(){
 })
 
 $("#logo").click(function(){
+  console.log("yopa")
   $("#view").html("");
   console.log("yop")
   news();
