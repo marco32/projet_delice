@@ -165,6 +165,7 @@ function news(){
     $("#products").append('<a href="#" class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
 
   }
+  $('.carousel').carousel();
 }
 
 
@@ -179,7 +180,6 @@ function news(){
     $("#view").html("");
     //console.log("yop");
     news();
-  $('.carousel').carousel();
   });
   // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
    
