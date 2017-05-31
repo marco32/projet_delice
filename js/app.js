@@ -124,10 +124,13 @@ if ('serviceWorker' in navigator) {
                   "photo": row[12]});
             // news();
             }
+          news()
           }else {
               appendPre('No data found.');
             }
-          }, function(response) {
+          }, 
+
+          function(response) {
             appendPre('Error: ' + response.result.error.message);
           });
 };
@@ -144,7 +147,6 @@ var photo= {"traiteur": "http://bianchidelice.fr/118_TRAITEUR_SURGELES_COROLLES_
             }
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
-news();
 function news(){
 
   //console.log(allProducts)
