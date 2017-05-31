@@ -188,6 +188,6 @@ function news(){
 function slide(){
   $('.extra-slider').extra-slider({
     draggable:true,
-    margin: 10;
+    margin: 10
   })
 }
