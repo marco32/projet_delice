@@ -176,10 +176,10 @@ function news(){
 
   $("#logo").click(function(){
     //console.log("yopa");
-  $('.carousel').carousel();
     $("#view").html("");
     //console.log("yop");
     news();
+  $('.carousel').carousel();
   });
   // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
    
