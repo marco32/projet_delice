@@ -94,70 +94,70 @@ if ('serviceWorker' in navigator) {
       }
 
 
-       var allProducts={};
+      var allProducts={};
 
-var photo= {"traiteur": "images/corolles-aperitif.jpg",
-            "plats cuisines": "images/langue-de-boeuf-piquante.jpg",
-            "La marée": "images/truites-arc-en-ciel.jpg",
-            "boucher": "images/steaks-hache-max.jpg",
-            "volailles": "images/pintade-fermiere.jpg",
-            "légumes": "images/julienne-legumes.jpg",
-            "patissier": "images/coeur-fondant-au-chocolat.jpg",
-            "glacier": "images/domes-praline-facon-rocher.jpg",
-            "bio": "images/haricots-bio-mange.jpg",
-            "Produits frais": "images/cafe-grains-pur-arabica.jpg"
-            };
+      var photo= {"traiteur": "images/corolles-aperitif.jpg",
+      "plats cuisines": "images/langue-de-boeuf-piquante.jpg",
+      "La marée": "images/truites-arc-en-ciel.jpg",
+      "boucher": "images/steaks-hache-max.jpg",
+      "volailles": "images/pintade-fermiere.jpg",
+      "légumes": "images/julienne-legumes.jpg",
+      "patissier": "images/coeur-fondant-au-chocolat.jpg",
+      "glacier": "images/domes-praline-facon-rocher.jpg",
+      "bio": "images/haricots-bio-mange.jpg",
+      "Produits frais": "images/cafe-grains-pur-arabica.jpg"
+    };
 
-       function listMajors() {
-        gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
-          range: 'test',
-        }).then(function(response) {
-          var product={};
-          var range = response.result;
-          if (range.values.length > 0) {
-            for (i = 1; i < range.values.length; i++) {
-              var row = range.values[i];
-              if(row[3]===''){
-                continue;
-              }
-              if(allProducts[row[3]]===undefined){
-                allProducts[row[3]] = [];
-              }
-              allProducts[row[3]].push({
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]});
+    function listMajors() {
+      gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
+        range: 'test',
+      }).then(function(response) {
+        var product={};
+        var range = response.result;
+        if (range.values.length > 0) {
+          for (i = 1; i < range.values.length; i++) {
+            var row = range.values[i];
+            if(row[3]===''){
+              continue;
             }
-            news();
-            stockage();
-          }else {
-              load();
+            if(allProducts[row[3]]===undefined){
+              allProducts[row[3]] = [];
             }
-          }, 
+            allProducts[row[3]].push({
+              "scat": row[4],
+              "ref": row[0],
+              "nom": row[1],
+              "unitv": row[5],
+              "punit": row[6],
+              "pttc": row[7],
+              "promo": row[9],
+              "ppromo": row[10],
+              "desc": row[11],
+              "photo": row[12]});
+          }
+          news();
+          stockage();
+        }else {
+          load();
+        }
+      }, 
 
-          function(response) {
-            appendPre('Error: ' + response.result.error.message);
-          });
-}
+      function(response) {
+        appendPre('Error: ' + response.result.error.message);
+      });
+    }
 // 
 function load() {
-      allProducts = JSON.parse(localStorage.getItem('allProducts'));  
-    }
+  allProducts = JSON.parse(localStorage.getItem('allProducts'));  
+}
 
-    function stockage() {
-      localStorage.setItem('allProducts', JSON.stringify(allProducts));
-    }
+function stockage() {
+  localStorage.setItem('allProducts', JSON.stringify(allProducts));
+}
 function generer(array){
 
-  $("#view").html("");
+  $("#view").toggle(display);
   $("#products").html("");
   for (var i = 0; i < allProducts[array].length; i++) {  
     var insert= allProducts[array][i];
@@ -177,24 +177,24 @@ function news(){
 }
 
 
-  $("#products").delegate('img','click', function(e){
-    e.preventDefault();
-    var categorie = $(this).attr("id");
-    generer(categorie);
-  });
+$("#products").delegate('img','click', function(e){
+  e.preventDefault();
+  var categorie = $(this).attr("id");
+  generer(categorie);
+});
 
-  $("#logo").click(function(e){
-    e.preventDefault();
+$("#logo").click(function(e){
+  e.preventDefault();
     //console.log("yopa");
-    $("#view").html("");
+    $("#view").show();
     //console.log("yop");
     news();
   });
   // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
-   
-function slide(){
-  $('.extra-slider').extraSlider({
-    draggable:true,
-    margin: 10
-  })
-}
+
+  function slide(){
+    $('.extra-slider').extraSlider({
+      draggable:true,
+      margin: 10
+    })
+  }
