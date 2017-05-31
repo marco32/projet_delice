@@ -105,6 +105,9 @@ if ('serviceWorker' in navigator) {
           if (range.values.length > 0) {
             for (i = 1; i < range.values.length; i++) {
               var row = range.values[i];
+              if(row[3]===''){
+                continue;
+              }
               if(allProducts[row[3]]===undefined){
                 allProducts[row[3]] = [];
               }
