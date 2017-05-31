@@ -122,9 +122,9 @@ if ('serviceWorker' in navigator) {
                   "ppromo": row[10],
                   "desc": row[11],
                   "photo": row[12]});
-            // news();
+            news();
             }
-          news()
+
           }else {
               appendPre('No data found.');
             }
