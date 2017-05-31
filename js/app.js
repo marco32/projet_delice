@@ -288,7 +288,7 @@ function news(){
   //console.log(allProducts)
   //$("#view").html("");
   for (var i = 0; i < allProducts.length; i++) {
-    $("#products").append('<a id="'+allProducts[i]+'"class="carousel-item"><img class="img" src="'+photo+'"/></a>');
+    $("#products").append('<a id="'+allProducts[i]+'"class="carousel-item"><img class="img" src="'+photo[i]+'"/></a>');
   }
 }
 $("#view").delegate('a','click', function(){
