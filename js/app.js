@@ -136,7 +136,7 @@ if ('serviceWorker' in navigator) {
             appendPre('Error: ' + response.result.error.message);
           });
 };
-var photo= {"traiteur": "images/corolles_aperitif.jpg",
+var photo= {"traiteur": "images/corolles-aperitif.jpg",
             "plats": "images/langue-de-boeuf-piquante.jpg",
             "maree": "images/truites-arc-en-ciel.jpg",
             "boucher": "images/steaks-hache-max.jpg",

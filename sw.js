@@ -40,11 +40,7 @@ var filesToCache = [
  '/projet_delice/fonts/roboto/Roboto-Regular.woff2',
  '/projet_delice/fonts/roboto/Roboto-Thin.woff',
  '/projet_delice/fonts/roboto/Roboto-Thin.woff2',
- '/projet_delice/images/1.jpg',
- '/projet_delice/images/2.jpg',
- '/projet_delice/images/3.jpg',
- '/projet_delice/images/4.jpg',
- '/projet_delice/images/corolles_aperitif.jpg',
+ '/projet_delice/images/corolles-aperitif.jpg',
  '/projet_delice/images/langue-de-boeuf-piquante.jpg',
  '/projet_delice/images/truites-arc-en-ciel.jpg',
  '/projet_delice/images/steaks-hache-max.jpg',
@@ -57,6 +53,7 @@ var filesToCache = [
  '/projet_delice/images/logo.jpg',
  '/projet_delice/favicon.ico',
  '/projet_delice/manifest.json',
+ 
 ];
 
 
