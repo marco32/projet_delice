@@ -141,12 +141,12 @@ if ('serviceWorker' in navigator) {
             appendPre('Error: ' + response.result.error.message);
           });
 };
-$('.carousel').carousel();
 var photo= ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg']
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 
 function news(){
+
   // console.log(allProducts)
   $("#view").html("");
   var categ = Object.keys(allProducts);
@@ -154,6 +154,7 @@ function news(){
   for (var i = 0; i < categ.length; i++) {
     // $('#'+i+'').append('<div id="'+allProducts[i]+'">'+allProducts[i]+'</div>')
     $('#products').append('<a id="'+categ[i]+'" class="carousel-item"><img class="img" src="images/'+categ[i]+'.jpg"/>  </a>');
+
   }
 }
 $("#view").delegate('a','click', function(){
@@ -162,12 +163,14 @@ $("#view").delegate('a','click', function(){
 })
 
 $("#logo").click(function(){
-  news()
+  $("#view").html("");
+  news();
+$('.carousel').carousel();
 })
 function generer(array){
 
   $("#view").html("");
-  $("#sous_cat").html("");
+  $("#products").html("");
   var ligne= '<ul id="products" class="grow">'
   $("#view").append(ligne)
   for (var i = 0; i < allProducts[array].length; i++) {  
