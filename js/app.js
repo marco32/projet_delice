@@ -186,7 +186,7 @@ function news(){
   // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
    
 function slide(){
-  $('.extra-slider').extra-slider({
+  $('.extra-slider').extraSlider({
     draggable:true,
     margin: 10
   })
