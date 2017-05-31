@@ -92,22 +92,9 @@ if ('serviceWorker' in navigator) {
         pre.appendChild(textContent);
       }
 
-      /**
-       * Print the names and majors of students in a sample spreadsheet:
-       * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-       */
+
        var allProducts={};
-       var traiteur=[];
-       var plats=[];
-       var maree=[];
-       var boucher=[];
-       var volailles=[];
-       var legumes=[];
-       var patissier=[];
-       var glacier=[];
-       var fruits=[];
-       var bio=[];
-       var frais=[];
+
        function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
@@ -118,160 +105,24 @@ if ('serviceWorker' in navigator) {
           if (range.values.length > 0) {
             for (i = 1; i < range.values.length; i++) {
               var row = range.values[i];
-              if(row[3] === "traiteur"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              traiteur.push(product)
-              }else if(row[3] === "plats cuisines"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              plats.push(product)              
-              }else if(row[3] === "La marée"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              maree.push(product)              
-              }else if(row[3] === "légumes"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              legumes.push(product)              
-              }else if(row[3] === "boucher"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              boucher.push(product)
-              }else if(row[3] === "volailles"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              volailles.push(product)
-              }else if(row[3] === "patissier"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              patissier.push(product)            
-              }else if(row[3] === "glacier"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              glacier.push(product)              
-              }else if(row[3] === "Produits frais"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              frais.push(product)              
-              }else if(row[3] === null && row[2] === "1"){
-                product={
-                  "scat": row[4],
-                  "ref": row[0],
-                  "nom": row[1],
-                  "unitv": row[5],
-                  "punit": row[6],
-                  "pttc": row[7],
-                  "promo": row[9],
-                  "ppromo": row[10],
-                  "desc": row[11],
-                  "photo": row[12]
-                }
-              bio.push(product)                      
+              if(row[3]===''){
+                continue;
               }
-              allProducts={
-                "traiteur":traiteur,
-                "plats":plats,
-                "maree":maree,
-                "boucher": boucher,
-                "volailles":volailles,
-                "legumes":legumes,
-                "patissier": patissier,
-                "glacier": glacier,
-                "bio": bio,
-                "frais": frais
+              if(allProducts[row[3]]===undefined){
+                allProducts[row[3]] = [];
               }
-            news();
+              allProducts[row[3]].push({
+                  "scat": row[4],
+                  "ref": row[0],
+                  "nom": row[1],
+                  "unitv": row[5],
+                  "punit": row[6],
+                  "pttc": row[7],
+                  "promo": row[9],
+                  "ppromo": row[10],
+                  "desc": row[11],
+                  "photo": row[12]});
+            // news();
             }
           }else {
               appendPre('No data found.');
@@ -295,10 +146,14 @@ var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volail
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 
 function news(){
+
   //console.log(allProducts)
   //$("#view").html("");
-  for (var i = 0; i < allProducts.length; i++) {
-    $("#products").append('<a id="'+allProducts+'"class="carousel-item"><img class="img" src="'+photo.allProducts+'"/></a>');
+  $("#view").html("");
+  var categ = Object.keys(allProducts);
+  for (var i = 0; i < categ.length; i++) {
+    $("#products").append('<a id="'+categ[i]+'"class="carousel-item"><img class="img" src="'+photo[categ[i]]+'"/></a>');
+
   }
 }
 $("#view").delegate('a','click', function(){
@@ -315,11 +170,9 @@ function generer(array){
 
   $("#view").html("");
   $("#products").html("");
-  var ligne= '<ul id="products" class="grow">'
-  $("#view").append(ligne)
   for (var i = 0; i < allProducts[array].length; i++) {  
     var insert= allProducts[array][i];
-    $("#products").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.pttc+'"</h6><p>"'+insert.desc+'"</p></div></div></li>')
+    $("#view").append('<div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.pttc+'"</h6><p>"'+insert.desc+'"</p></div></div>')
   }
 }
 // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
