@@ -157,7 +157,7 @@ function stockage() {
 }
 function generer(array){
 
-  $("#products").toggle(display);
+  $("#products").toggle();
   $("#view").append('<div id="'+aff+'" class="wrapper"><ul>');
   for (var i = 0; i < allProducts[array].length; i++) {  
     var insert= allProducts[array][i];
@@ -186,7 +186,7 @@ $("#products").delegate('img','click', function(e){
 $("#logo").click(function(e){
   e.preventDefault();
     //console.log("yopa");
-    $("#products").show();
+    $("#products").toggle();
     $("#view").html("");
     //console.log("yop");
     news();
