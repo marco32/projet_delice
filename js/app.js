@@ -1,4 +1,3 @@
-$(document).ready(function(){
   
 if ('serviceWorker' in navigator) {
   // J'enregistre mon service worker sw.js
@@ -97,6 +96,18 @@ if ('serviceWorker' in navigator) {
 
        var allProducts={};
 
+var photo= {"traiteur": "images/corolles-aperitif.jpg",
+            "plats cuisines": "images/langue-de-boeuf-piquante.jpg",
+            "La marée": "images/truites-arc-en-ciel.jpg",
+            "boucher": "images/steaks-hache-max.jpg",
+            "volailles": "images/pintade-fermiere.jpg",
+            "légumes": "images/julienne-legumes.jpg",
+            "patissier": "images/coeur-fondant-au-chocolat.jpg",
+            "glacier": "images/domes-praline-facon-rocher.jpg",
+            "bio": "images/haricots-bio-mange.jpg",
+            "Produits frais": "images/cafe-grains-pur-arabica.jpg"
+            };
+
        function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
@@ -135,43 +146,8 @@ if ('serviceWorker' in navigator) {
           function(response) {
             appendPre('Error: ' + response.result.error.message);
           });
-};
-var photo= {"traiteur": "images/corolles-aperitif.jpg",
-            "plats cuisines": "images/langue-de-boeuf-piquante.jpg",
-            "La marée": "images/truites-arc-en-ciel.jpg",
-            "boucher": "images/steaks-hache-max.jpg",
-            "volailles": "images/pintade-fermiere.jpg",
-            "légumes": "images/julienne-legumes.jpg",
-            "patissier": "images/coeur-fondant-au-chocolat.jpg",
-            "glacier": "images/domes-praline-facon-rocher.jpg",
-            "bio": "images/haricots-bio-mange.jpg",
-            "Produits frais": "images/cafe-grains-pur-arabica.jpg"
-            }
-var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
-var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
-function news(){
-
-  //console.log(allProducts)
-  //$("#view").html("");
-  $("#view").html("");
-  var categ = Object.keys(allProducts);
-  for (var i = 0; i < categ.length; i++) {
-    $("#products").append('<a class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
-
-  }
 }
-$("#products").delegate('img','click', function(){
-  console.log("yop")
-  var categorie = $(this).attr("id");
-  generer(categorie);
-})
-
-$("#logo").click(function(){
-  console.log("yopa")
-  $("#view").html("");
-  console.log("yop")
-  news();
-})
+// 
 function generer(array){
 
   $("#view").html("");
@@ -181,7 +157,30 @@ function generer(array){
     $("#view").append('<div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.ref+'"</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">"'+insert.nom+'"</h3><h6 class="right">"'+insert.pttc+'"</h6><p>"'+insert.desc+'"</p></div></div>')
   }
 }
-// à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
- 
-$('.carousel').carousel();
-})
+
+function news(){
+  $("#view").html("");
+  var categ = Object.keys(allProducts);
+  for (var i = 0; i < categ.length; i++) {
+    $("#products").append('<a class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
+
+  }
+}
+
+$(document).ready(function(){
+  $("#products").delegate('img','click', function(){
+    console.log("yop");
+    var categorie = $(this).attr("id");
+    generer(categorie);
+  });
+
+  $("#logo").click(function(){
+    //console.log("yopa");
+    $("#view").html("");
+    //console.log("yop");
+    news();
+  });
+  // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
+   
+  $('.carousel').carousel();
+});
