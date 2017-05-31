@@ -154,17 +154,18 @@ function news(){
   $("#view").html("");
   var categ = Object.keys(allProducts);
   for (var i = 0; i < categ.length; i++) {
-    $("#products").append('<a href="#" class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
+    $("#products").append('<a class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
 
   }
 }
 $("#products").delegate('img','click', function(){
-  console.log(categorie)
+  console.log("yop")
   var categorie = $(this).attr("id");
   generer(categorie);
 })
 
 $("#logo").click(function(){
+  console.log("yopa")
   $("#view").html("");
   news();
 $('.carousel').carousel();
