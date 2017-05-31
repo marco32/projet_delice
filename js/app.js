@@ -137,9 +137,10 @@ var photo= {"traiteur": "images/corolles-aperitif.jpg",
                   "photo": row[12]});
             }
             news();
-
+            localeStorage.setItem("allProducts", JSON.stringify(allProducts));
           }else {
-              appendPre('No data found.');
+              var allProducts_json= localeStorage.getItem("allProducts");
+              allProducts= JSON.parse(allProducts_json);
             }
           }, 
 
