@@ -1,3 +1,5 @@
+$(document).ready(function(){
+  
 if ('serviceWorker' in navigator) {
   // J'enregistre mon service worker sw.js
   // avec comme scope '/' (racine);
@@ -154,20 +156,20 @@ function news(){
   $("#view").html("");
   var categ = Object.keys(allProducts);
   for (var i = 0; i < categ.length; i++) {
-    $("#products").append('<a href="#" class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
+    $("#products").append('<a class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
 
   }
 }
 $("#products").delegate('img','click', function(){
-  console.log(categorie)
+  console.log("yop")
   var categorie = $(this).attr("id");
   generer(categorie);
 })
 
 $("#logo").click(function(){
   $("#view").html("");
+  console.log("yop")
   news();
-$('.carousel').carousel();
 })
 function generer(array){
 
@@ -180,3 +182,5 @@ function generer(array){
 }
 // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
  
+$('.carousel').carousel();
+})
