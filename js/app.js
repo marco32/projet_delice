@@ -280,7 +280,17 @@ if ('serviceWorker' in navigator) {
             appendPre('Error: ' + response.result.error.message);
           });
 };
-var photo= ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg']
+var photo= {"traiteur": "http://bianchidelice.fr/118_TRAITEUR_SURGELES_COROLLES_APERITIF.jpg",
+            "plats": "http://bianchidelice.fr/178_PLATSCUISINES_SURGELES_LANGUE_DE_BOEUF_PIQUANTE.jpg",
+            "maree": "http://bianchidelice.fr/397_CRUSTACES_SURGELES_CREVETTES_BOUQUETS_SAUVAGES.jpg",
+            "boucher": "http://bianchidelice.fr/510_VIANDES_SURGELES_STEAKS_HACHEMAX.jpg",
+            "volailles": "http://bianchidelice.fr/628_VIANDES_SURGELES_POULET_LANDES_FERMIER.jpg",
+            "legumes": "http://bianchidelice.fr/780_LEGUMES_SURGELES_JULIENNE_LEGUMES.jpg",
+            "patissier": "http://bianchidelice.fr/801_PATISSERIE_SURGELES_COEUR_FONDANT_AU_CHOCOLAT.jpg",
+            "glacier": "http://bianchidelice.fr/952_GLACES_SURGELES_DOMES_PRALINE_FACON_ROCHER.jpg",
+            "bio": "http://bianchidelice.fr/PAN1_LEGUMES_FRAIS_PANIER_LEGUMES_FRAIS_BIOLOGIQUE_LOCAL.jpg",
+            "frais": "http://bianchidelice.fr/CAF1G_EPICERIE_FRAIS_CAFE_GRAINS_PUR_ARABICA.jpg"
+            }
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 
@@ -288,7 +298,7 @@ function news(){
   //console.log(allProducts)
   //$("#view").html("");
   for (var i = 0; i < allProducts.length; i++) {
-    $("#products").append('<a id="'+allProducts[i]+'"class="carousel-item"><img class="img" src="'+photo[i]+'"/></a>');
+    $("#products").append('<a id="'+allProducts+'"class="carousel-item"><img class="img" src="'+photo.allProducts+'"/></a>');
   }
 }
 $("#view").delegate('a','click', function(){
