@@ -153,7 +153,8 @@ function news(){
 
   for (var i = 0; i < categ.length; i++) {
     // $('#'+i+'').append('<div id="'+allProducts[i]+'">'+allProducts[i]+'</div>')
-    $('#products').append('<a id="'+categ[i]+'" class="carousel-item"><img class="img" src="images/'+categ[i]+'.jpg"/>  </a>');
+    // $('#products').append('<a id="'+categ[i]+'" class="carousel-item"><img class="img" src="images/'+categ[i]+'.jpg"/>  </a>');
+    $('#view').append('<div id="'+categ[i]+'">'+categ[i]+'</div>');
 
   }
 }
