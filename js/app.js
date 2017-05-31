@@ -158,7 +158,7 @@ function news(){
 
   }
 }
-$("#view").delegate('img','click', function(){
+$("#view").on('img','click', function(){
   console.log(categorie)
   var categorie = $(this).attr("id");
   generer(categorie);
