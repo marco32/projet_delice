@@ -137,10 +137,9 @@ var photo= {"traiteur": "images/corolles-aperitif.jpg",
                   "photo": row[12]});
             }
             news();
-            localeStorage.setItem("allProducts", JSON.stringify(allProducts));
+            stockage();
           }else {
-              var allProducts_json= localeStorage.getItem("allProducts");
-              allProducts= JSON.parse(allProducts_json);
+              load();
             }
           }, 
 
@@ -149,6 +148,13 @@ var photo= {"traiteur": "images/corolles-aperitif.jpg",
           });
 }
 // 
+function load() {
+      allProducts = JSON.parse(localStorage.getItem('allProducts'));  
+    }
+
+    function stockage() {
+      localStorage.setItem('allProducts', JSON.stringify(allProducts));
+    }
 function generer(array){
 
   $("#view").html("");
