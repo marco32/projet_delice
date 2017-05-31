@@ -137,15 +137,15 @@ if ('serviceWorker' in navigator) {
           });
 };
 var photo= {"traiteur": "images/corolles-aperitif.jpg",
-            "plats": "images/langue-de-boeuf-piquante.jpg",
-            "maree": "images/truites-arc-en-ciel.jpg",
+            "plats cuisines": "images/langue-de-boeuf-piquante.jpg",
+            "La marée": "images/truites-arc-en-ciel.jpg",
             "boucher": "images/steaks-hache-max.jpg",
             "volailles": "images/pintade-fermiere.jpg",
-            "legumes": "images/julienne-legumes.jpg",
+            "légumes": "images/julienne-legumes.jpg",
             "patissier": "images/coeur-fondant-au-chocolat.jpg",
             "glacier": "images/domes-praline-facon-rocher.jpg",
             "bio": "images/haricots-bio-mange.jpg",
-            "frais": "images/cafe-grains-pur-arabica.jpg"
+            "Produits frais": "images/cafe-grains-pur-arabica.jpg"
             }
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
