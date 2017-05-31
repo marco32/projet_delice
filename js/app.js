@@ -271,6 +271,7 @@ if ('serviceWorker' in navigator) {
                 "bio": bio,
                 "frais": frais
               }
+            news();
             }
           }else {
               appendPre('No data found.');
@@ -284,7 +285,6 @@ var photo= ['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg','images/
 var listesurgeles=["Traiteur","Plats Cuisinés","La Marée","Le Boucher","Volailles","Légumes","Pâtissier","Glacier","Fruits","Bio Surgelés"];
 var listefrais=["Bio", "Epicerie", "Vin à la propriété"]
 
-news();
 function news(){
   console.log(allProducts)
   $("#view").html("");
@@ -298,7 +298,9 @@ $("#view").delegate('p','click', function(){
   generer(categorie);
 })
 
-
+$("#logo").click(function(){
+  news()
+})
 function generer(array){
 
   $("#view").html("");
