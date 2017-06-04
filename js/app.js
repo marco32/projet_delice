@@ -199,9 +199,9 @@ $("#logo").click(function(e){
       margin: 10
     })
   }
-  online= window.navigator.online;
-  if(navigator.online){
-    alert("Connected")
-  }else{
-    alert("Bad connection")
-  }
+  online = window.navigator.onLine
+if(navigator.online){
+  alert("connected")
+}else{
+  alert("bad connexion")
+}
