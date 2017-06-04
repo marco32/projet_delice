@@ -1,4 +1,4 @@
-  
+
 if ('serviceWorker' in navigator) {
   // J'enregistre mon service worker sw.js
   // avec comme scope '/' (racine);
@@ -198,4 +198,10 @@ $("#logo").click(function(e){
       draggable:true,
       margin: 10
     })
+  }
+  online= window.navigator.online;
+  if(navigator.online){
+    alert("Connected")
+  }else{
+    alert("Bad connection")
   }
