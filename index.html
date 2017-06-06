@@ -2,39 +2,46 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 	<title>Accueil catalogue</title>
 	<link rel="stylesheet" href="css/materialize.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/material-icons.css">
 	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/stroll.min.css"/>
-	<link rel="stylesheet" href="css/extra.slider.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'/>
 	<link rel="icon" type="image/png" href="favicon.ico"/>
 	<link rel="manifest" href="manifest.json"/>
 </head>
 <body>
-	<header>
+	<header class="col s12 m6">
 		<nav class="nav-extended">
 			<div class="nav-wrapper">
 
 				<a href="#"><img src="images/logo.jpg" alt="logo"  class="brand-logo center" id="logo"></img></a>
+				<img src="fonts/caddy.png" id="caddy"/>
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
 				</ul>
+			   
+			    	<button id="authorize-button">Authorize</button>
+			    	<button id="signout-button" >Sign Out</button>
+			    
 			</div>
 	</nav>
 </header>
-<main>
+<main class="col s12 m6">
 
 
 
 
 
-	<div class="container">
+	
+	<div class="open">
 			<div id="products" class="carousel"></div>
-		<div id="view" class="extra-slider">
+		
+	</div>
+		<div id="view" class="row">
 		</div>
 	
-	</div>
+	
 </main>
 
 
@@ -42,9 +49,6 @@
 
 
 <footer>
-    <button id="authorize-button">Authorize</button>
-    <button id="signout-button" >Sign Out</button>
-
     <pre id="content"></pre>
 
 	<script  defer src="https://apis.google.com/js/api.js"
@@ -53,9 +57,7 @@
 	</script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src ="js/materialize.min.js"></script>
-	<script type="text/javascript" src="js/extra.slider.js"></script>
 	<script src="js/stroll.min.js" type="text/javascript"></script>
-
 	<script type="text/javascript" src='js/app.js'></script>
 </footer>
 </body>

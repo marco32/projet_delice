@@ -1,8 +1,11 @@
-
+  
 if ('serviceWorker' in navigator) {
   // J'enregistre mon service worker sw.js
   // avec comme scope '/' (racine);
   navigator.serviceWorker.register('sw.js', { scope: '/projet_delice/'})
+ 
+
+
   // Si c'est good..
   .then(function(reg){
     console.log('Registration succeeded. Scope is ' + reg.scope);
@@ -12,6 +15,7 @@ if ('serviceWorker' in navigator) {
     console.log('Registration failed with' + error);
   });
 }
+
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '397522859395-84g22kehn30179u64c02ev5ln4haqbid.apps.googleusercontent.com';
 
@@ -92,23 +96,28 @@ if ('serviceWorker' in navigator) {
         var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
       }
-
-
+      var clientX;
+        var clientY;
       var allProducts={};
+      var data;
 
-      var photo= {"traiteur": "images/corolles-aperitif.jpg",
-      "plats cuisines": "images/langue-de-boeuf-piquante.jpg",
-      "La marée": "images/truites-arc-en-ciel.jpg",
-      "boucher": "images/steaks-hache-max.jpg",
-      "volailles": "images/pintade-fermiere.jpg",
-      "légumes": "images/julienne-legumes.jpg",
-      "patissier": "images/coeur-fondant-au-chocolat.jpg",
-      "glacier": "images/domes-praline-facon-rocher.jpg",
-      "bio": "images/haricots-bio-mange.jpg",
-      "Produits frais": "images/cafe-grains-pur-arabica.jpg"
+      var photo= {"traiteur": "/demo/images/corolles-aperitif.jpg",
+      "plats cuisines": "/demo/images/langue-de-boeuf-piquante.jpg",
+      "La marée": "/demo/images/truites-arc-en-ciel.jpg",
+      "boucher": "/demo/images/steaks-hache-max.jpg",
+      "volailles": "/demo/images/pintade-fermiere.jpg",
+      "légumes": "/demo/images/julienne-legumes.jpg",
+      "patissier": "/demo/images/coeur-fondant-au-chocolat.jpg",
+      "glacier": "/demo/images/domes-praline-facon-rocher.jpg",
+      "bio": "/demo/images/haricots-bio-mange.jpg",
+      "Produits frais": "/demo/images/cafe-grains-pur-arabica.jpg"
     };
 
     function listMajors() {
+      load();
+      if(data === null){
+
+
       gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: '1yAOfAtVGLUSO454B_CDMPX5qpQLs7K5D-FI6IJbMm8s',
         range: 'test',
@@ -134,74 +143,98 @@ if ('serviceWorker' in navigator) {
               "promo": row[9],
               "ppromo": row[10],
               "desc": row[11],
-              "photo": row[12]});
-          }
-          news();
-          stockage();
+              "photo": row[12].slice(23)});
+          }          
+         initCarousel();
+         stockage();
         }else {
-          load();
+          
         }
-      }, 
-
-      function(response) {
+      }, function(response) {
         appendPre('Error: ' + response.result.error.message);
       });
+      }else{
+        allProducts=data;
+        initCarousel();
+      }
     }
 // 
+
+function initCarousel(){
+        var categ = Object.keys(allProducts);
+      for (var i = 0; i < categ.length; i++) {
+      $("#products").append('<div data-id="'+categ[i]+'" class="carousel-item ok"><div  style=\' background-image: url("'+photo[categ[i]]+'"); background-size:cover ; width : 500px ; height: 400px \'><button class="waves-effect waves-light btn">'+categ[i]+'</button></div></div>');
+  }   
+     $('.carousel').carousel(); 
+  var lesImages = document.getElementsByClassName("ok");
+          for(var iii = 0; iii<lesImages.length; iii++){
+ lesImages[iii].addEventListener('touchstart',handleTouch,false);
+            lesImages[iii].addEventListener('touchend',handleTouchEnd,false);
+            lesImages[iii].addEventListener('click',handleClick,true);          }
+ 
+}
+function handleClick(e){
+      // console.log(e);
+      e.preventDefault();
+      console.log('ok');
+      var categorie = $(this).data("id");
+      generer(categorie);      
+   }
+
+   function handleTouchEnd(e){
+        var deltaX, deltaY;
+
+       // Compute the change in X and Y coordinates.
+        // The first touch point in the changedTouches
+        // list is the touch point that was just removed from the surface.
+        deltaX = e.changedTouches[0].clientX - clientX;
+        deltaY = e.changedTouches[0].clientY - clientY;
+
+       if(deltaX ===0 && deltaY ===0){
+          var categorie = $(this).data("id");
+          generer(categorie);
+          clientX=0;
+          clientY=0;
+        }
+    }
+
+   function handleTouch(e){
+      e.preventDefault();
+      clientX = e.touches[0].clientX;
+      clientY = e.touches[0].clientY;
+      // alert(clientX);
+  
+    }
 function load() {
-  allProducts = JSON.parse(localStorage.getItem('allProducts'));  
+  data = JSON.parse(localStorage.getItem('allProducts'));  
 }
 
 function stockage() {
   localStorage.setItem('allProducts', JSON.stringify(allProducts));
 }
 function generer(array){
-
-  $("#products").toggle();
-  $("#view").append('<div id="aff" class="wrapper"><ul>');
+  $(".open").toggle();
+  $("#view").append('<div id="aff">');
   for (var i = 0; i < allProducts[array].length; i++) {  
     var insert= allProducts[array][i];
-    $("#aff").append('<li><div class="card"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="'+insert.photo+'"/></div><div class="card-content"><h3 class="card-title activator grey-text text-darken-4">'+insert.nom+'</h3><h6 class="right">'+insert.ref+'</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><h6 class="right">'+insert.pttc+'€</h6><p>'+insert.desc+'</p></div></div></li>')
+    if(insert.promo !== ""){
+          $("#aff").append('<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/demo/image'+insert.photo+'"/></div><div class="card-content"><h4 class="center free">Promotion</h4><h5 class="card-title activator grey-text text-darken-4 name">'+insert.nom+'</h5><div><h6 class="left promo">Prix :'+insert.pttc+'€</h6></div><h6 class="right">Ref: '+insert.ref+'</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><div class="row group"><ul><li><h6 class="left promo">Prix: '+insert.pttc+'€</h6></li><li><h6 class="left">Réduction: '+insert.promo+'€</h6></li><li><h6 class="left">Prix promo :'+insert.ppromo+'€</h6></li></ul></div><p>'+insert.desc+'</p></div></div>');
+
+    }else{
+    $("#aff").append('<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/demo/image'+insert.photo+'"/></div><div class="card-content"><h5 class="card-title activator grey-text text-darken-4 name">'+insert.nom+'</h5><div><h6 class="left">Prix :'+insert.pttc+'€</h6><h6 class="right">Ref: '+insert.ref+'</h6></div></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><div class="row"><h6 class="left">Prix: '+insert.pttc+'€</h6></div><p>'+insert.desc+'</p></div></div>');
+      
+    }
   }
-  slide();
 }
-
-function news(){
-  $("#view").html("");
-  var categ = Object.keys(allProducts);
-  for (var i = 0; i < categ.length; i++) {
-    $("#products").append('<a href="#" class="carousel-item"><img id="'+categ[i]+'" class="img" src="'+photo[categ[i]]+'"/></a>');
-
-  }
-  $('.carousel').carousel();
-}
-
-
-$("#products").delegate('img','click', function(e){
-  e.preventDefault();
-  var categorie = $(this).attr("id");
-  generer(categorie);
-});
-
-$("#logo").click(function(e){
-  e.preventDefault();
-    //console.log("yopa");
-    $("#products").toggle();
+$("#logo").click(function(){
+    $(".open").toggle();
     $("#view").html("");
-    //console.log("yop");
-    news();
   });
-  // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
-
-  function slide(){
-    $('.extra-slider').extraSlider({
-      draggable:true,
-      margin: 10
-    })
-  }
-  online = window.navigator.onLine
-if(navigator.online){
-  alert("connected")
+  online = window.navigator.onLine;
+if(online){
+  //alert("connected");
 }else{
-  alert("bad connexion")
+  listMajors();
 }
+
+  // à ajouter sous-cat(scat), unité de vente (unitv), prix unitaire (punit), promo (promo) et prix(ppromo)
