@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Dosis';
-  src: url('../fonts/Dosis/Dosis-Light.eot');
-  src: url('../fonts/Dosis/Dosis-Light.woff2') format('woff2'),
-       url('../fonts/Dosis/Dosis-Light.woff') format('woff'),
-       url('../fonts/Dosis/Dosis-Light.ttf') format('truetype'),
-       url('../fonts/Dosis/Dosis-Light.svg#Dosis-Light') format('svg'),
-       url('../fonts/Dosis/Dosis-Light.eot?#iefix') format('embedded-opentype');
+  src: url('../fonts/Dosis/Dosis-Medium.eot');
+  src: url('../fonts/Dosis/Dosis-Medium.woff2') format('woff2'),
+       url('../fonts/Dosis/Dosis-Medium.woff') format('woff'),
+       url('../fonts/Dosis/Dosis-Medium.ttf') format('truetype'),
+       url('../fonts/Dosis/Dosis-Medium.svg#Dosis-Medium') format('svg'),
+       url('../fonts/Dosis/Dosis-Medium.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -123,6 +123,7 @@ main{
 }
 .card .card-image img {
 	width: 300px;
+	height: 300px;
 }
 .carousel .carousel-item{
 	width: 30%;
@@ -135,5 +136,4 @@ main{
 }
 .group{
 	display: flex;
-}
 }
