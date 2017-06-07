@@ -101,16 +101,16 @@ if ('serviceWorker' in navigator) {
       var allProducts={};
       var data;
 
-      var photo= {"traiteur": "/demo/images/corolles-aperitif.jpg",
-      "plats cuisines": "/demo/images/langue-de-boeuf-piquante.jpg",
-      "La marée": "/demo/images/truites-arc-en-ciel.jpg",
-      "boucher": "/demo/images/steaks-hache-max.jpg",
-      "volailles": "/demo/images/pintade-fermiere.jpg",
-      "légumes": "/demo/images/julienne-legumes.jpg",
-      "patissier": "/demo/images/coeur-fondant-au-chocolat.jpg",
-      "glacier": "/demo/images/domes-praline-facon-rocher.jpg",
-      "bio": "/demo/images/haricots-bio-mange.jpg",
-      "Produits frais": "/demo/images/cafe-grains-pur-arabica.jpg"
+      var photo= {"traiteur": "/projet_delice/images/corolles-aperitif.jpg",
+      "plats cuisines": "/projet_delice/images/langue-de-boeuf-piquante.jpg",
+      "La marée": "/projet_delice/images/truites-arc-en-ciel.jpg",
+      "boucher": "/projet_delice/images/steaks-hache-max.jpg",
+      "volailles": "/projet_delice/images/pintade-fermiere.jpg",
+      "légumes": "/projet_delice/images/julienne-legumes.jpg",
+      "patissier": "/projet_delice/images/coeur-fondant-au-chocolat.jpg",
+      "glacier": "/projet_delice/images/domes-praline-facon-rocher.jpg",
+      "bio": "/projet_delice/images/haricots-bio-mange.jpg",
+      "Produits frais": "/projet_delice/images/cafe-grains-pur-arabica.jpg"
     };
 
     function listMajors() {
@@ -218,10 +218,10 @@ function generer(array){
   for (var i = 0; i < allProducts[array].length; i++) {  
     var insert= allProducts[array][i];
     if(insert.promo !== ""){
-          $("#aff").append('<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/demo/image'+insert.photo+'"/></div><div class="card-content"><h4 class="center free">Promotion</h4><h5 class="card-title activator grey-text text-darken-4 name">'+insert.nom+'</h5><div><h6 class="left promo">Prix :'+insert.pttc+'€</h6></div><h6 class="right">Ref: '+insert.ref+'</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><div class="row group"><ul><li><h6 class="left promo">Prix: '+insert.pttc+'€</h6></li><li><h6 class="left">Réduction: '+insert.promo+'€</h6></li><li><h6 class="left">Prix promo :'+insert.ppromo+'€</h6></li></ul></div><p>'+insert.desc+'</p></div></div>');
+          $("#aff").append('<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/projet_delice/image'+insert.photo+'"/></div><div class="card-content"><h4 class="center free">Promotion</h4><h5 class="card-title activator grey-text text-darken-4 name">'+insert.nom+'</h5><div><h6 class="left promo">Prix :'+insert.pttc+'€</h6></div><h6 class="right">Ref: '+insert.ref+'</h6></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><div class="row group"><ul><li><h6 class="left promo">Prix: '+insert.pttc+'€</h6></li><li><h6 class="left">Réduction: '+insert.promo+'€</h6></li><li><h6 class="left">Prix promo :'+insert.ppromo+'€</h6></li></ul></div><p>'+insert.desc+'</p></div></div>');
 
     }else{
-    $("#aff").append('<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/demo/image'+insert.photo+'"/></div><div class="card-content"><h5 class="card-title activator grey-text text-darken-4 name">'+insert.nom+'</h5><div><h6 class="left">Prix :'+insert.pttc+'€</h6><h6 class="right">Ref: '+insert.ref+'</h6></div></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><div class="row"><h6 class="left">Prix: '+insert.pttc+'€</h6></div><p>'+insert.desc+'</p></div></div>');
+    $("#aff").append('<div class="card large"><div class="card-image waves-effect waves-block waves-light"><img class="activator img" src="/projet_delice/image'+insert.photo+'"/></div><div class="card-content"><h5 class="card-title activator grey-text text-darken-4 name">'+insert.nom+'</h5><div><h6 class="left">Prix :'+insert.pttc+'€</h6><h6 class="right">Ref: '+insert.ref+'</h6></div></div><div class="card-reveal"><h3 class="card-title grey-text text-darken-4">'+insert.nom+'</h3><div class="row"><h6 class="left">Prix: '+insert.pttc+'€</h6></div><p>'+insert.desc+'</p></div></div>');
       
     }
   }
