@@ -17,7 +17,8 @@ if ('serviceWorker' in navigator) {
 }
 
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '397522859395-84g22kehn30179u64c02ev5ln4haqbid.apps.googleusercontent.com';
+      // var CLIENT_ID = '397522859395-84g22kehn30179u64c02ev5ln4haqbid.apps.googleusercontent.com';
+      var CLIENT_ID = '798073669987-uc0sotkejohmrcsaj7ri594sqsv249ar.apps.googleusercontent.com';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
